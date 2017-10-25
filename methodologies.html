@@ -122,14 +122,14 @@
             help in extracting the needed answer.
           </p>
           <p style="text-align: justify">
-            One of the major application of such transformation of data [24], is Word Embedding which is a natural language technique.
+            One of the major application of such transformation of data, is Word Embedding which is a natural language technique.
             It is used to map words or phrases from a vocabulary to a corresponding vector of real numbers. Word embedding
-            aims to create a vector representation [25] with a much lower dimensional space. In contrast Bag of Words [26]
+            aims to create a vector representation with a much lower dimensional space. In contrast Bag of Words
             approach, which often results in huge and sparse vectors. In Bag of Words approach the dimensionality of the
             vectors representing each document is equal to the size of the vocabulary.
           </p>
           <p style="text-align: justify">
-            Word Embedding [27] is also used for semantic parsing, to extract the meaning from text to enable Natural Language Understanding.
+            Word Embedding is also used for semantic parsing, to extract the meaning from text to enable Natural Language Understanding.
             For a language model to understand the meaning of a word, it need to know the contextual similarity of words.
             For example if we tend to find diseases in sentences, where diabetes, diarrhea, HIV should be of close proximity.
             So the vectors created by word embedding preserves these similarities along with the words that regularly occur
@@ -145,7 +145,7 @@
             </ul>
           </p>
           <p style="text-align: justify">
-            In a simple 1-of-N [28] encoding transforms categorical features to a format that works better with classification and regression
+            In a simple 1-of-N encoding transforms categorical features to a format that works better with classification and regression
             algorithms. In simple terms every element in the vector is associated with a word in the vocabulary. The encoding
             of a given word is simply the vector in which corresponding element is set to one and all others are set to zero.
             Suppose we consider a vocabulary of five words; diabetes, diarrhea, HIV, obesity, paralysis. We could encode
@@ -154,7 +154,7 @@
             set of output.
           </p>
           <p style="text-align: justify">
-            GloVe [29] is a ‘count based’ model. Which means GloVe learn their vectors through collecting word co-occurrence statistics
+            GloVe is a ‘count based’ model. Which means GloVe learn their vectors through collecting word co-occurrence statistics
             in a form of word co-occurrence matrix X. Each element Xij of such matrix represents how often word i appears
             in context of word j in a large corpus. The number of "contexts" is of course large, since it is essentially
             combinatorial in size. Then factoring this matrix to yield a lower-dimensional matrix, where each row now yields
@@ -163,13 +163,13 @@
           <p style="text-align: justify">
             In specific, the creators of GloVe illustrate that the “ratio of the co-occurrence probabilities of two words (rather than
             their co-occurrence probabilities themselves) is what contains information and look to encode this information
-            as vector differences”. But when it comes for computation GloVe will be taking more memory [30], because it precomputes
-            the large word into word co-occurrence (large word x word co-occurrence) matrix in memory[31]. Also sometimes
+            as vector differences”. But when it comes for computation GloVe will be taking more memory, because it precomputes
+            the large word into word co-occurrence (large word x word co-occurrence) matrix in memory. Also sometimes
             there is a restriction on vocabulary since GloVe requires memory quadratic in the number of words: it keeps that
             sparse matrix of all word x word co-occurrences in RAM.
           </p>
           <p style="text-align: justify">
-            Word2vec [32] is a predictive model which is one of the most popular word embedding model. This simply learns relationship
+            Word2vec is a predictive model which is one of the most popular word embedding model. This simply learns relationship
             between words without any prior knowledge about the domain. The output are vectors, one vector per word with
             an exceptional linear relationship. Once a vector model is created out of the corpus, word2vec provides two basic
             tools namely analogy and distance to use. Distance - tool provide a list of words which are closely related to
@@ -197,31 +197,31 @@
           </p>
           <p style="text-align: justify">
             The embedding layer in the question processing component can be done through a popular pre-trained word embedding model known
-            as word2vec or glove(exact model will be chosen based on further trial and error)[14]. Word2vec is a small two
+            as word2vec or glove(exact model will be chosen based on further trial and error). Word2vec is a small two
             layer neural network. It contains two distinct models (CBOW and skip-gram), each with two different training
-            methods (with/without negative sampling) and other variations [14]. To top that, it also contains a sharp pre-processing
+            methods (with/without negative sampling) and other variations. To top that, it also contains a sharp pre-processing
             pipeline, whose effects on the overall performance is yet to be evaluated.
           </p>
           <p style="text-align: justify">
             The other sub-component is Syntactic analysis of a question. Syntactic analysis is the process of identifying the structure
             of a sentence,The interplay of syntax and semantics of natural language questions is of interest for question
             representation. Researchers in the area of question understanding reccomend the use of a TreeLSTM neural network
-            for this purpose[15], since it is capable to capture long distance interaction on a tree. The other option would
+            for this purpose, since it is capable to capture long distance interaction on a tree. The other option would
             be to go with a chain structured LSTM but the critical downfall of it for this specific task is that it fails
-            to capture long distance interaction on a tree[15].
+            to capture long distance interaction on a tree.
           </p>
           <p style="text-align: justify">
-            To obtain the parse tree information some of the available open source parsers such as the Noah's Ark parser [16], or the
+            To obtain the parse tree information some of the available open source parsers such as the Noah's Ark parser, or the
             Standford Core Parser can be used.
           </p>
           <p style="text-align: justify">
             Questions by nature are composed to fulfill different types of information. A what question and a how question requires different
-            types of information [15]. In Order to incorporate this a Wh-Analysis will be required, thus an additional layer
+            types of information. In Order to incorporate this a Wh-Analysis will be required, thus an additional layer
             for question adaption will be required. Wh-word is basically the question word which is one of who, why, where,
             which, when, how, what and rest. “rest” are the questions that don't have any question word. Example :- Name
             of a disease that cause bowel bleeding?. This process segregates questions into different types and considers
             the type of question for answer generation, a recommended approach for this would be to encode question type
-            information into a one hot vector which is a trainable embedding vector [15], and it is incorporated in the training
+            information into a one hot vector which is a trainable embedding vector, and it is incorporated in the training
             process.
           </p>
           <p style="text-align: justify">
@@ -236,10 +236,10 @@
           <p style="text-align: justify">
             As mentioned before, the main objective of this project is to come up with an Artificial Neural Network (ANN) based solution
             for Intelligent Information Extraction. In here we are particularly focusing on addressing the Information Retrieval
-            in a form intelligent Question and Answering System. In related work, Ontology based information extraction [17],
+            in a form intelligent Question and Answering System. In related work, Ontology based information extraction,
             seems to be a recently emerged subfield of information retrieval. However the inability to reason over discrete
             and their relationships can be identified as a major drawback in these Ontologies and knowledge base information
-            retrieval/extraction systems [18]. Therefore we present a system which is capable of performing this task with
+            retrieval/extraction systems. Therefore we present a system which is capable of performing this task with
             the help of ANN particularly Recursive Neural Tensor Networks.
           </p>
           <p style="text-align: justify">
@@ -296,7 +296,7 @@
           </p>
           <p style="text-align: justify">
             One possible approach is to use a recursive auto encoder model which will be fed with data formatted in a dependency parse
-            tree [19]. In this approach the researchers have constructed a sentence level vector which can be decomposed
+            tree. In this approach the researchers have constructed a sentence level vector which can be decomposed
             when required and the same sentence can be retrieved again later on. However by randomising the vector’s at the
             output stage (decomposition) they have managed to generate paraphrased sentence structures from the data that
             they feed in. This approach requires some complex corpus preprocessing and is therefore a tedious task to carry
@@ -308,8 +308,8 @@
             time after which they stop firing. This is in contrast to regular feed forward networks. However RNN’s have what
             is often referred to as the ‘exploding gradients problem’ because of the hidden states that the neurons can go
             into. This has made training RNN’s tough. A recent development in the Hessian-Free optimization technique however
-            has made it effective to train RNN’s [20]. Sutskever et al. show how they have trained and optimised a RNN to
-            predict the next character in a stream of characters [21]. The researchers developed a character level RNN model
+            has made it effective to train RNN’s. Sutskever et al. show how they have trained and optimised a RNN to
+            predict the next character in a stream of characters. The researchers developed a character level RNN model
             that was able to generate text with a high level linguistic structure and correct grammatical structure.
           </p>
           <p style="text-align: justify">
@@ -318,7 +318,7 @@
             works by analysing the previous characters in a string and guessing what the next characters should be. Therefore,
             by training a RNN with a large data set such as Project Gutenberg we will be able to train a good RNN model.
             Then the model can be fed with some primetext which would come from the answer sentence selected in the previous
-            component and the model should be able to generate the required sentence [22].
+            component and the model should be able to generate the required sentence.
           </p>
           <p style="text-align: justify">
             A RNN acts like a feedback loop where the output of one layer is added to the input and is fed back into the same neural
